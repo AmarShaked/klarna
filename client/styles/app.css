@@ -1,0 +1,43 @@
+.search {
+  margin: 0 auto;
+  width: 800px;
+}
+
+h2 {
+  box-sizing: content-box;
+}
+
+.user-avatar {
+  float: left;
+  margin-right: 12px;
+  width: 40px;
+  border-radius: 40px;
+}
+
+.results {
+  margin-top: 40px;
+}
+
+.phone-number {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.phone-number i {
+  margin-right: 5px;
+}
+
+.cui__selector--direct__description {
+  margin-left: 50px;
+}
+
+.message {
+  font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 17px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 40px;
+  padding: 16px 0 9px;
+  text-transform: uppercase;
+}

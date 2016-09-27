@@ -1,0 +1,51 @@
+<html ng-app="app">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='styles/klarna-ui-css-components.css' rel='stylesheet' type='text/css'>
+    <link href='styles/app.css' rel='stylesheet' type='text/css'>
+    <title>Klarna Exercise</title>
+</head>
+
+<body>
+    <div class="search" ng-controller="PeopleController as vm">
+        <div class="cui__input giant">
+            <input class="cui__input__input" ng-change="vm.getPeoples()" ng-model="vm.query" placeholder="Type your search query" />
+        </div>
+        <div ng-if="!vm.total" class="message">
+            No results, please review your search or try a different one
+        </div>
+        <div ng-if="vm.total" class="results">
+            <div class="cui__selector--direct title">
+                <h2 class="cui__selector--direct__title">
+                  Search results
+                </h2>
+                <div class="cui__selector--direct__item" ng-repeat="people in vm.peoples track by people.id">
+                    <img class="user-avatar" ng-src="{{people.avatar_origin}}" />
+                    <div class="cui__selector--direct__label">
+                        {{people.name}} ({{people.birthday | toAge}})
+                    </div>
+                    <p class="phone-number">
+                        <i class="fa fa-phone"></i> {{people.phone}}
+                    </p>
+                    <p class="cui__selector--direct__description">
+                        {{people.address.street}}, {{people.address.city}}, {{people.address.country}}.
+                    </p>
+                </div>
+            </div>
+            <ul uib-pagination ng-if="vm.total > 10"  max-size="7" boundary-link-numbers="true" total-items="vm.total" ng-model="vm.currentPage" ng-change="vm.getPeoples()"></ul>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.1.4/ui-bootstrap-tpls.min.js"></script>
+    <script src="src/app.module.js"></script>
+    <script src="src/app.api.js"></script>
+    <script src="src/app.controller.js"></script>
+    <script src="src/app.filter.js"></script>
+
+</body>
+
+</html>

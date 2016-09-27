@@ -1,0 +1,19 @@
+{
+  "name": "klarna",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+  },
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "engines": {
+    "node": "6.3.1"
+  }
+}
