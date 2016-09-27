@@ -14,7 +14,10 @@
         <div class="cui__input giant">
             <input class="cui__input__input" ng-change="vm.getPeoples()" ng-model="vm.query" placeholder="Type your search query" />
         </div>
-        <div ng-if="!vm.total" class="message">
+        <div ng-if="vm.isFetching" class="loading">
+            <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+        <div ng-if="!vm.total && !isFetching" class="message">
             No results, please review your search or try a different one
         </div>
         <div ng-if="vm.total" class="results">

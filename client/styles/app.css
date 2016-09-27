@@ -41,3 +41,9 @@ h2 {
   padding: 16px 0 9px;
   text-transform: uppercase;
 }
+
+.loading {
+  text-align: center;
+  margin-top: 40px;
+  color: #66aae0;
+}
