@@ -28,7 +28,7 @@
                 <div class="cui__selector--direct__item" ng-repeat="people in vm.peoples track by people.id">
                     <img class="user-avatar" ng-src="{{people.avatar_origin}}" />
                     <div class="cui__selector--direct__label">
-                        {{people.name}} ({{people.birthday | toAge}})
+                        {{people.name}} <small>(age {{people.birthday | toAge}})</small>
                     </div>
                     <p class="phone-number">
                         <i class="fa fa-phone"></i> {{people.phone}}
